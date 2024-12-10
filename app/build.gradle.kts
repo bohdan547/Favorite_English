@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.panevrn.favorite_english"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.panevrn.favorite_english"

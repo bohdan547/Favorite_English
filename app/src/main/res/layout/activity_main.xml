@@ -6,13 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
+    android:gravity="center"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="250dp"
         android:layout_height="104dp"
-        android:layout_marginTop="148dp"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="Вітаємо!"
-                android:textSize="24sp"
+                style="@style/TextViewHeaderStyle"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints" />
             <ImageView
@@ -45,8 +44,35 @@
             android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:text="У цьому додатку ти зможеш вчити слова і виконувати Д/З в своєму телефону"
+            style="@style/TextViewMainStyle"
+            android:text="У цьому додатку ти зможеш вчити слова і виконувати Д/З в своєму телефоні"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="86dp">
+
+        <android.widget.Button
+            android:layout_width="237dp"
+            android:layout_height="50dp"
+            android:text="@string/button_welcome1"
+            style="@style/TextViewButtonStyle"
+            android:textAllCaps="false"
+            android:background="@drawable/shape_rounded_button"
+            />
+
+        <android.widget.Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Я ще не займаюсь"
+            android:textAllCaps="false"
+            style="@style/TextViewButtonStyle.Transparent"
+            android:background="@android:color/transparent"
             />
 
     </LinearLayout>

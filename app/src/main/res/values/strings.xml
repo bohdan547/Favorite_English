@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Favorite_English</string>
+    <string name="app_name">Favorite English</string>
+    <string name="button_welcome1">Я існуючий студент</string>
 </resources>
