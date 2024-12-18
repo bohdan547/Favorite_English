@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Favorite English</string>
     <string name="button_welcome1">Я існуючий студент</string>
+    <string name="clickable_text_registration"><u>Вже є аккаунт?\nУвійти</u></string>
 </resources>
