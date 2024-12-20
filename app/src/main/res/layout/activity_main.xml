@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:layout_width="250dp"
-        android:layout_height="104dp"
+        android:layout_height="110dp"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -66,6 +66,7 @@
             />
 
         <android.widget.Button
+            android:id="@+id/main_activity_register_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Я ще не займаюсь"
