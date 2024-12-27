@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="brandColor2">#385AD2</color>
+    <color name="grayish">#ABABAB</color>
 </resources>
