@@ -59,6 +59,7 @@
         <android.widget.Button
             android:layout_width="237dp"
             android:layout_height="50dp"
+            android:id="@+id/main_activity_login_button"
             android:text="@string/button_welcome1"
             style="@style/TextViewButtonStyle"
             android:textAllCaps="false"
