@@ -22,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RegistrationActivity : AppCompatActivity() {
     lateinit var binding: ActivityRegistrationBinding
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint("MissingInflatedId", "SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
