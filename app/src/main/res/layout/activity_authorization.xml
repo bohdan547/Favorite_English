@@ -67,25 +67,30 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints">
 
-            <TextView
+            <EditText
+                android:id="@+id/emailEditTextEmail"
                 style="@style/TextViewInputStyle"
                 android:layout_width="302dp"
                 android:layout_height="45dp"
-
+                android:ems="10"
                 android:background="@drawable/shape_rounded_registration_input"
                 android:gravity="center_vertical"
                 android:paddingStart="25dp"
-                android:text="E-mail" />
+                android:hint="E-mail"
+                android:inputType="textEmailAddress"/>
 
-            <TextView
+            <EditText
+                android:id="@+id/passwordEditText"
                 style="@style/TextViewInputStyle"
                 android:layout_width="302dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/shape_rounded_registration_input"
                 android:gravity="center_vertical"
+                android:ems="10"
+                android:inputType="textPassword"
                 android:paddingStart="25dp"
-                android:text="Пароль" />
+                android:hint="Пароль" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -114,6 +119,7 @@
             android:layout_weight="1" />
 
         <android.widget.Button
+            android:id="@+id/bAuthorization"
             style="@style/TextViewButtonStyle"
             android:layout_width="149dp"
             android:layout_height="49dp"
@@ -162,6 +168,14 @@
             tools:ignore="ContentDescription" />
 
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
