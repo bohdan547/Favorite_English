@@ -24,10 +24,12 @@ import org.json.JSONObject
 
 class RegistrationActivity : AppCompatActivity() {
     private lateinit var mainApi: MainApi
+    private lateinit var userPreferences: UserPreferences
     lateinit var binding: ActivityRegistrationBinding
     @SuppressLint("MissingInflatedId", "SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        userPreferences = UserPreferences(this)
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.register)
@@ -93,6 +95,7 @@ class RegistrationActivity : AppCompatActivity() {
                         if (user != null) {
                             val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
                             startActivity(intent)
+                            userPreferences.saveUserData(true)
                             finish() // Закриваємо екран реєстрації
                         }
                     }
