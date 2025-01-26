@@ -60,20 +60,43 @@ class AuthorizationActivity : AppCompatActivity() {
 
     private fun auth(authRequest: AuthRequest) {
         CoroutineScope(Dispatchers.IO).launch {
-            val response = mainApi.auth(authRequest)
-            val message = response.errorBody()?.string()?.let {
-                JSONObject(it).getString("message")
-            }
-            this@AuthorizationActivity.runOnUiThread {
-                binding.error.text = message
-                val user = response.body()
-                if (user != null) {
-                    //перехід на основний екран
-                    val intents = Intent(this@AuthorizationActivity, MainActivity::class.java)
-                    startActivity(intents)
+            try {
+                val response = mainApi.auth(authRequest)
+                val message = if (!response.isSuccessful) {
+                    response.errorBody()?.string()?.let {
+                        JSONObject(it).optJSONObject("data")?.let { data ->
+                            data.keys().asSequence().joinToString("\n") { key ->
+                                val errors = data.getJSONArray(key)
+                                val errorMessages = (0 until errors.length()).joinToString(", ") { i ->
+                                    errors.getString(i)
+                                }
+                                "$key: $errorMessages"
+                            }
+                        } ?: "Unknown error occurred."
+                    }
+                } else {
+                    null // Якщо відповідь успішна, помилок немає
+                }
+
+                this@AuthorizationActivity.runOnUiThread {
+                    if (message != null) {
+                        // Виведення помилки, якщо вона є
+                        binding.errorAuth.text = message
+                    } else {
+                        // Успішна авторизація: перехід на основний екран
+                        val user = response.body()
+                        if (user != null) {
+                            val intent = Intent(this@AuthorizationActivity, MainActivity::class.java)
+                            startActivity(intent)
+                            finish() // Закриваємо екран авторизації
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                this@AuthorizationActivity.runOnUiThread {
+                    binding.errorAuth.text = "An unexpected error occurred: ${e.message}"
                 }
             }
-
         }
     }
 }
