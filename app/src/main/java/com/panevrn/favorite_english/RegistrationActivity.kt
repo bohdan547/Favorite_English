@@ -50,6 +50,11 @@ class RegistrationActivity : AppCompatActivity() {
             )
         }
 
+        binding.haveAccount.setOnClickListener {
+            val intent = Intent(this@RegistrationActivity, AuthorizationActivity::class.java)
+            startActivity(intent)
+        }
+
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
 

@@ -143,6 +143,7 @@
 
         <TextView
             style="@style/TextViewInputStyle.Clickable"
+            android:id="@+id/haveAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/clickable_text_registration" />
